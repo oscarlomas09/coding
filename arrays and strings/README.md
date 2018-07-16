@@ -25,6 +25,21 @@ console.log(isUnique('quickredbat')); // true
 console.log(isUnique('abcd abcd')); // false
 ```
 #### What if you cannot use additional data structures?
+```javascript
+function isUnique(str) {
+	for(let i = 0; i < str.length; i++) {  	
+    const c = str.substr(i, 1); // get the next character
+    // iterate for every additional character in the string
+    for(let j = i + 1; j < str.length; j++) {
+    	// duplicate found
+    	if(c === str.substr(j, 1)) {
+      	return false;
+      }
+    }
+  }
+  return true;
+}
+```
 
 #### Question 2 - Check Permutation: Given two strings, write a method to decide if one is a permutation of the other.
 ```javascript
