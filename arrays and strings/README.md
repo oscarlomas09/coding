@@ -27,7 +27,7 @@ console.log(isUnique('abcd abcd')); // false
 #### What if you cannot use additional data structures?
 ```javascript
 function isUnique(str) {
-	for(let i = 0; i < str.length; i++) {  	
+  for(let i = 0; i < str.length; i++) {  	
     const c = str.substr(i, 1); // get the next character
     // iterate for every additional character in the string
     for(let j = i + 1; j < str.length; j++) {
