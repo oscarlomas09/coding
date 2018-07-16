@@ -58,3 +58,27 @@ function isPermutation(str1, str2) {
 console.log(isPermutation('abba', 'ccbbabbac')); // true
 console.log(isPermutation('abba', 'ccbbabfbac')); // false
 ```
+
+
+#### Question 3 - URLify: Write a method to replace all spaces in a string with '%20:
+```javascript
+function URLify(str) {
+	let newStr = '';
+  // iterate through every character
+	for(let i = 0; i < str.length; i++) {
+    const current_char = str.substr(i, 1); // get the current character
+    const next_char = i === str.length - 1 ? null : str.substr(i+1, 1); // get the next character
+    // if this is the last character and it is a space, then just ignore it
+    if(current_char === " " && next_char === null) 
+    	break;
+      
+    // if the current character is a space, and the next character is NOT a space
+    if(current_char === " " && next_char !== " ") {
+    	newStr += '%20';
+    } else {
+    	newStr += current_char; // append the character
+    }
+  }
+  return newStr;
+}
+```
